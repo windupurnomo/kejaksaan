@@ -3,6 +3,7 @@ package id.zcode.android.bingo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -44,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
         EditText etPassword = findViewById(R.id.et_password);
         String password = etPassword.getText().toString();
 
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "Email harus diisi", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Password harus diisi", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         // bandingkan data dari EditText dengan data yang sudah kita siapkan
         Map user = null;
         for (Map u : users) {
@@ -59,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             // cek apakah password nya benar
             if (password.equals((String) user.get("password"))) {
                 // klo valid pindah ke activity home
-                Intent intent = new Intent(this, ForgotPasswordActivity.class);
+                Intent intent = new Intent(this, HomeActivity.class);
                 startActivity(intent);
             } else {
                 // klo tidak valid tampilkan pesan error

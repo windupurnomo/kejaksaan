@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onRegister(View view) {
-        Toast.makeText(this, "Klik text buat akun baru", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 }

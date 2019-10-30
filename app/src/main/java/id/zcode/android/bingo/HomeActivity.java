@@ -87,8 +87,9 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_tambah_kasus) {
             Intent intent = new Intent(this, KasusFormActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_spinner) {
+            Intent intent = new Intent(this, LabSpinnerActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

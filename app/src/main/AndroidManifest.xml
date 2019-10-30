@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".KasusListActivity">
         </activity>
+        <activity android:name=".LabSpinnerActivity">
+        </activity>
     </application>
 
 </manifest>
